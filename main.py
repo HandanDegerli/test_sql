@@ -27,9 +27,9 @@ def load_data(path):
     return pd.read_csv(path)
 
 
-book = load_data('/Users/zelihadegerli/Desktop/streamlit_enverionment/book_recommendation.csv')
+book = load_data('book_recommendation.csv')
 
-bestsellers = load_data('/Users/zelihadegerli/Desktop/streamlit_enverionment/bestsellers.csv')
+bestsellers = load_data('bestsellers.csv')
 
 bestsellers.head()
 
