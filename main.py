@@ -177,7 +177,7 @@ def home():
 
     # ! imdb column
     image_movie = 'https://media.tenor.com/HJTXKCtOYwgAAAAM/perfect-popcorn.gif'
-    redirect_movie = "https://appent-g9qe2nhwhrvvgnhkqybvzq.streamlit.app/"
+    redirect_movie = "https://miuulmovierecommender.streamlit.app/"
 
     html_movie = f"""
         <div style="position: relative; width: 150px; height: 150px;">
