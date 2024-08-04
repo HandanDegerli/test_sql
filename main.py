@@ -19,7 +19,7 @@ def get_image_from_book(url_id):
         return None
 
 
-st.set_page_config(layout='wide', page_title='Book Recommendation')
+st.set_page_config(layout='wide', page_title='Book Recommendation', page_icon = "📚")
 
 
 @st.cache_data
@@ -335,15 +335,7 @@ def explore():
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
-    st.markdown(
-        """
-        <div class="chooce_book">
-            <h1 style='color: #CD5C5C; font-family: "Times New Roman", Times, serif;'> Find Your Next Favorite Book!</h1>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
+    st.markdown("<hr style='border: 1px solid #F5F3D9;'>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
 
