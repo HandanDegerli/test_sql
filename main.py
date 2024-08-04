@@ -19,7 +19,7 @@ def get_image_from_book(url_id):
         return None
 
 
-st.set_page_config(layout='wide', page_title='Book Recommendation', page_icon = "📚")
+st.set_page_config(layout='wide', page_title='Book Recommendation', page_icon = "📚" )
 
 
 @st.cache_data
@@ -31,7 +31,6 @@ book = load_data('book_recommendation.csv')
 
 bestsellers = load_data('bestsellers.csv')
 
-bestsellers.head()
 
 @st.cache_data
 def calculate_cosine_sim_book(dataframe):
@@ -77,11 +76,11 @@ def home():
     st.markdown(
         """
         <style>
-        .hero {
+        .hero { 
+            background-color: #E9967A;
             text-align: center;
             flex-direction: column;
-            padding: 50px;
-            background-color: #F5F3D9;
+            padding: 40px;
             border-radius: 10px;
             margin-bottom: 20px;
             position: relative;
@@ -89,13 +88,13 @@ def home():
         .hero h1 {
             font-family: "Times New Roman", Times, serif;
             font-size: 48px;
-            color: #CD5C5C;
+            color:  #F5F3D9;
             font-weight: bold;
         }
         .hero p {
             font-family: "Times New Roman", Times, serif;
             font-size: 18px;
-            color: black;
+            color: #F5F3D9;
             margin-top: 20px;
         }
         </style>
@@ -121,9 +120,9 @@ def home():
         """
         <style>
         .stButton > button {
-            background-color: #F5F3D9;
+            background-color: #E9967A; 
             font-family: "Times New Roman", Times, serif;
-            color: #CD5C5C;
+            color: #F5F3D9;
             border: 2px solid black; 
             transition: color 0.3s, border-color 0.3s; 
             text-align: left;
@@ -136,7 +135,7 @@ def home():
             cursor: pointer;
         }
         .stButton > button:hover {
-            color: #CD5C5C; 
+            color:  #CD5C5C; 
             border-color: #CD5C5C; 
         }
         </style>
@@ -151,40 +150,9 @@ def home():
     if st.button('Explore Now'):
         switch_page('explore')
 
-    ############## home page ana title diger secenekler icin  ##############
+    st.markdown("<hr style='border: 1px solid #CD5C5C;'>", unsafe_allow_html=True)
 
-    st.markdown(
-        """
-        <style>
-        .chooce_book {
-            background-color: #F5F3D9;  
-            padding: 5px;  
-            border-radius: 10px;
-            display: flex;
-            justify-content: center; 
-            align-items: center;  
-            height: 50px;  
-        }
-        .chooce_book h1 {
-            color: #CD5C5C; 
-            font-family: "Times New Roman", Times, serif;
-            font-size: 20px;  / Yazı boyutunu küçültün /
-            margin: 0;  / Başlık etrafındaki varsayılan boşlukları kaldırın /
-            text-align: center;  / Metni ortalayın */
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
 
-    st.markdown(
-        """
-        <div class="chooce_book">
-            <h1 style='color: #CD5C5C; font-family: "Times New Roman", Times, serif;'> Discover More!</h1>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
     st.container().markdown("<br>", unsafe_allow_html=True)
 
     ############## home page diger seceneklerin gosterimi  ##############
@@ -251,6 +219,9 @@ def home():
 
     col5.markdown(html_steam, unsafe_allow_html=True)
 
+    st.markdown("<hr style='border: 1px solid #CD5C5C;'>", unsafe_allow_html=True)
+
+
 def explore():
     # Bestsellers section
 
@@ -281,13 +252,12 @@ def explore():
     st.markdown(
         """
         <div class="chooce_book">
-            <h1 style='color: #CD5C5C; font-family: "Times New Roman", Times, serif;' >Bestsellers</h1>
+            <h1 style='color: #F5F3D9; font-family: "Times New Roman", Times, serif;' >Bestsellers</h1>
         </div>
         """,
         unsafe_allow_html=True,
     )
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("<hr style='border: 1px solid #CD5C5C;'>", unsafe_allow_html=True)
 
 
     best_1, best_2, best_3, best_4, best_5, best_6, best_7, best_8, best_9, best_10 = st.columns(10)
@@ -311,7 +281,7 @@ def explore():
         """
         <style>
         .chooce_book {
-            background-color: #F5F3D9;  
+            background-color: #E9967A;   
             padding: 5px;  
             border-radius: 10px;
             display: flex;
@@ -320,7 +290,7 @@ def explore():
             height: 50px;  
         }
         .chooce_book h1 {
-            color: #CD5C5C; 
+            color: #F5F3D9;
             font-family: "Times New Roman", Times, serif;
             font-size: 40px;  / Yazı boyutunu küçültün /
             margin: 0;  / Başlık etrafındaki varsayılan boşlukları kaldırın /
@@ -333,9 +303,17 @@ def explore():
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
 
-    st.markdown("<hr style='border: 1px solid #F5F3D9;'>", unsafe_allow_html=True)
+    st.markdown(
+        """
+        <div class="chooce_book">
+            <h1 style='color: #F5F3D9; font-family: "Times New Roman", Times, serif;'> Find Your Next Favorite Book!</h1>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown("<hr style='border: 1px solid #CD5C5C;'>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
 
